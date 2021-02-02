@@ -1,0 +1,115 @@
+* {
+  font-family: "Nanum Gothic", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigationBar {
+  display: flex;
+
+  .navIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .line {
+    width: 16px;
+    height: 16px;
+    border-right: solid 1px gray;
+  }
+
+  .logo {
+    font-family: "Cookie", cursive;
+    font-size: 40px;
+  }
+}
+
+.mainPage {
+  display: flex;
+
+  .feedBox {
+    article {
+      width: 450px;
+      height: 500px;
+      background-color: thistle;
+
+      .feedIdBox {
+        .feedIdImg {
+          width: 20px;
+          height: 20px;
+          background-color: blue;
+        }
+      }
+
+      .feedImg {
+        width: 400px;
+        height: 400px;
+      }
+
+      // .replyHeart : 댓글 생성 시, 사용 가능한 클래스
+      .replyHeart {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+      }
+
+      .replyBox {
+        position: relative;
+        @extend %flexCenter;
+        width: 400px;
+        background-color: rosybrown;
+
+        .replyText {
+          position: relative;
+          display: flex;
+          width: 380px;
+          height: 30px;
+        }
+
+        .activationReplyBtn {
+          display: flex;
+          position: absolute;
+          right: 20px;
+          background-color: unset;
+          border: 0;
+          color: blue;
+          font-weight: bold;
+          opacity: 1;
+          &:hover {
+            cursor: pointer;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .disabledReplyBtn {
+          display: flex;
+          position: absolute;
+          right: 20px;
+          background-color: unset;
+          border: 0;
+          color: blue;
+          font-weight: bold;
+          opacity: 0.3;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  aside {
+    .myId {
+      color: red;
+      background-color: blue;
+    }
+  }
+}

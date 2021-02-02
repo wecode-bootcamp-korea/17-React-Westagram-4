@@ -7,8 +7,8 @@ import Nav from "./Components/Nav/Nav";
 //import MainKT from "./Pages/kyungto/Main/Main";
 //import LoginMK from "./Pages/mikyung/Login/Login";
 //import MainMK from "./Pages/mikyung/Main/Main";
-//import LoginSH from "./Pages/seunghyun/Login/Login";
-//import MainSH from "./Pages/seunghyun/Main/Main";
+import LoginSH from "./Pages/seunghyun/Login/Login";
+import MainSH from "./Pages/seunghyun/Main/Main";
 
 class Routes extends React.Component {
   render() {
@@ -16,21 +16,18 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Nav} />
-          {/*       
-          <Route exact path="/login-je" component={LoginJE} />
-          <Route exact path="/main-je" component={MainJE} />
 
-          <Route exact path="/login-kt" component={LoginKT} />
-          <Route exact path="/main-kt" component={MainKT} />
+          {/* <Route exact path="/login-je" component={LoginJE} />
+          <Route exact path="/main-je" component={MainJE} /> */}
 
-          <Route exact path="/login-mk" component={LoginMK} />
-          <Route exact path="/main-mk" component={MainMK} />
+          {/* <Route exact path="/login-kt" component={LoginKT} />
+          <Route exact path="/main-kt" component={MainKT} /> */}
+
+          {/* <Route exact path="/login-mk" component={LoginMK} />
+          <Route exact path="/main-mk" component={MainMK} /> */}
 
           <Route exact path="/login-sh" component={LoginSH} />
           <Route exact path="/main-sh" component={MainSH} />
-          */}
-
-          {/* <Route exact path="/" component={Login} /> */}
         </Switch>
       </Router>
     );
