@@ -1,0 +1,45 @@
+.search {
+  width: 20%;
+}
+
+.useIds {
+  background: rgba(var(--d87, 255, 255, 255), 1);
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3px;
+  margin-top: 0;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.storiesName {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  
+
+}
+
+.westa {
+  font-family: "Lobster", cursive;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.userId {
+  font-weight: bolder;
+}
+.otherUserName {
+  font-weight: bolder;
+}
+
+.feeds {
+  padding: 10px 0;
+  border: 1px solid #a7a9b0;
+}
+.navBar {
+  padding: 15px 0;
+}
+.commentEmoticons {
+  padding: 10px 0;
+}
