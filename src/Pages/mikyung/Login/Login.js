@@ -38,6 +38,17 @@ class LoginMK extends React.Component {
   };
 
   goToMain = () => {
+    /*     fetch("http://10.58.1.:8000/user/user", {
+      method: "POST",
+      body: JSON.stringify({
+        name: "",
+        email: this.state.id,
+        phone_number: "",
+        password: this.state.pw,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result)); */
     this.props.history.push("/main-mk");
   };
 
