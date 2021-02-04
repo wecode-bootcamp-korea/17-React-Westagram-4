@@ -15,8 +15,6 @@ class LoginMK extends React.Component {
 
   loginEnable = () => {
     if (this.state.id.includes("@") && this.state.pw.length > 6) {
-      console.log(this.state.id.includes("@"));
-      console.log("hi");
       this.setState({
         islogin: true,
       });

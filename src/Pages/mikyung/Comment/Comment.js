@@ -2,20 +2,11 @@ import React from "react";
 import "../Comment/Comment.scss";
 
 class Comment extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+  state = {};
 
   render() {
     return (
       <>
-        <div className="description">
-          <p>
-            <span className="article_userID">ggiiiaa</span>
-            <span className="content">&nbsp;&nbsp;#쿠바 여행 가고 싶다~</span>
-          </p>
-        </div>
         <div className="comment_section">
           <ul className="comments">
             <li className="comment_ul">
@@ -40,10 +31,10 @@ class Comment extends React.Component {
                 <i class="far fa-heart"></i>
               </div>
             </li>
-            {this.state.commentList.map((comment) => (
+            {this.props.commentList.map((comment) => (
               <li className="comment_ul">
                 <span>
-                  <span className="comment_userID">{this.state.user}</span>
+                  <span className="comment_userID">{this.props.user}</span>
                   <span className="comment2">{comment}</span>
                 </span>
                 <div className="heart2">

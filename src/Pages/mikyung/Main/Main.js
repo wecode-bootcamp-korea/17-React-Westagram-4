@@ -35,6 +35,7 @@ class MainMK extends React.Component {
       <div className="main1">
         <Nav />
         <Stories />
+
         <div className="main-right">
           <div className="myProfile">
             <img
@@ -89,7 +90,6 @@ class MainMK extends React.Component {
                   <div className="liked_people">
                     <p className="liked">좋아요 2,342개</p>
                   </div>
-
                   <div className="description">
                     <p>
                       <span className="article_userID">ggiiiaa</span>
@@ -98,7 +98,11 @@ class MainMK extends React.Component {
                       </span>
                     </p>
                   </div>
-                  <div className="comment_section">
+                  <Comment
+                    commentList={this.state.commentList}
+                    user={this.state.user}
+                  />
+                  {/* <div className="comment_section">
                     <ul className="comments">
                       <li className="comment_ul">
                         <span>
@@ -140,7 +144,7 @@ class MainMK extends React.Component {
                     <div className="time_log">
                       <span>37분 전</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="addcomment1">
