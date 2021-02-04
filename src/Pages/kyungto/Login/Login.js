@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./Login.scss";
 
 class Login extends React.Component {
@@ -21,6 +22,38 @@ class Login extends React.Component {
       pwValue: event.target.value,
     });
   };
+
+  goToMain = () => {
+    this.props.history.push("/Main");
+  };
+
+  // 새로 함수를 만들었는데 testGo,testJoin,testLogin 없이도 fetch로만 가능
+  // testGo = () => {
+  //   fetch("", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: this.state.nameValue,
+  //       password: this.state.pwValue,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((res) => console.log("결과: ", res));
+  //     .then((res) => this.testJoin(res));
+
+  //   .then((res) => this.testLogin(res));
+  // };
+
+  // testJoin = (res) => {
+  //   if (res.message === "SUCCESS") {
+  //     alert("회원가입 추카");
+  //   } else {
+  //     alert("g회원가입 실패염");
+  //   }
+  // };
+
+  // testLogin = () => {
+  //   this.goToMain();
+  // };
 
   render() {
     return (
@@ -48,6 +81,8 @@ class Login extends React.Component {
               : "loginButton inactiveBtn"
           }
           type="button"
+          // onClick={this.testGo}
+          onClick={this.goToMain}
         >
           로그인
         </button>
@@ -58,4 +93,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

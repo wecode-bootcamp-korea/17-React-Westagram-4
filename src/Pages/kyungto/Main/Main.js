@@ -1,6 +1,7 @@
 import React from "react";
 import "./Main.scss";
 import Nav from "../../../Components/Nav/Nav";
+import Comment from "../Comment/comment";
 
 class Main extends React.Component {
   constructor() {
@@ -21,7 +22,7 @@ class Main extends React.Component {
     this.setState({
       commentList: [
         ...this.state.commentList,
-        { id: Date.now(), userName: "iam", content: this.state.commentValue },
+        { id: Date.now(), userName: "Oscar", content: this.state.commentValue },
       ],
       commentValue: "",
     });
@@ -29,7 +30,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="maincontainer">
         <header>
           <Nav />
         </header>
@@ -80,17 +81,11 @@ class Main extends React.Component {
                 src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGl0YWx5JTIwc3BhaW4lMjBzcXVhcmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               />
             </div>
+
             <div className="articleCommentsContain">
               <div className="articleWrite">
                 <ul>
-                  {this.state.commentList.map((item) => {
-                    return (
-                      <li className="commentList">
-                        <span>{item.userName}</span>
-                        <span>{item.content}</span>
-                      </li>
-                    );
-                  })}
+                  <Comment commentList={this.state.commentList} />
                 </ul>
               </div>
               <div className="articleContent">
@@ -111,7 +106,7 @@ class Main extends React.Component {
           </div>
           <div className="mainRight">boxxx</div>
         </div>
-      </>
+      </div>
     );
   }
 }

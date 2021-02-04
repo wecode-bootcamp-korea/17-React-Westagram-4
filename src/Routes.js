@@ -20,7 +20,7 @@ class Routes extends React.Component {
           {/* <Route exact path="/login-je" component={LoginJE} />
           <Route exact path="/main-je" component={MainJE} /> */}
 
-          <Route exact path="/Login" component={Login} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/main" component={Main} />
 
           {/* <Route exact path="/login-mk" component={LoginMK} />
