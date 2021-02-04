@@ -2,6 +2,7 @@ import React from 'react';
 import "./Main.scss";
 
 
+
 class Main extends React.Component {
     constructor(){
       super();
@@ -12,23 +13,23 @@ class Main extends React.Component {
     }
 
    
-    handleAllInput = (e) => {
-      this.setState({
-        [e.target.name] : e.target.value
-      })
-    }
-    handleKeypress =(e) =>{
-      if(this.state.comment && e.keyCode === "Enter" ) {
-        handleSubmit();
-      }
-    }
+    // handleAllInput = (e) => {
+    //   this.setState({
+    //     [e.target.name] : e.target.value
+    //   })
+    // }
+    // handleKeypress =(e) =>{
+    //   if(this.state.comment && e.keyCode === "Enter" ) {
+    //     handleSubmit();
+    //   }
+    // }
 
-    handleSubmit = () => {
-      this.setState({
-        commentList: this.state.commentList.concat(this.state.text),
-        text: ''
-      })
-    }
+    // handleSubmit = () => {
+    //   this.setState({
+    //     commentList: this.state.commentList.concat(this.state.text),
+    //     text: ''
+    //   })
+    // }
 
   render() {
     return (
