@@ -26,22 +26,6 @@ class Login extends React.Component {
     ? this.setState({buttonColor:'btn'})
     : this.setState({buttonColor:'btn2'})
    }
-
-
-//    signup =()=>  {
-//     fetch("", {
-//       method:"POST",
-//       body: JSON.stringify({
-//         email: this.state.id,
-//         password: this.state.pw,
-//       })
-//     })
-//     .then((response) => response.json())
-//     .then((result) => //console.log("결과: ", result)
-// {localStorage.setItem("token",result.access_token)
-//   })
-//   }
-
    
    gotoMain = () => {
      fetch("http://10.58.0.202:8000/user/signin", {
@@ -54,21 +38,13 @@ class Login extends React.Component {
      .then((response) => response.json())
      .then((result) => {
         if (result.message === "SUCCESS") {
-console.log(result.message);
           localStorage.setItem('token', result.token);
           this.props.history.push("/main-je");
           alert("로그인 성공");
-        }else {  alert("로그인 실패"); console.log(result.message);  }
+        }else { alert("로그인 실패"); console.log(result.message);}
       }
       )
     }    
-
-    //  result.message ==='success' ?
-    //  this.props.history.push("/main-je") : alert("실패")
-    //  localStorage.setItem('token', result.access_token)
-    //  )
-    // this.props.history.push('/main');
-    
 
    render() {
      //ES6 객체, 배열, 구조 분해 할당
