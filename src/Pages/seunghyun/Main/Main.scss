@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.navigationBar {
+/* .navigationBar {
   display: flex;
 
   .navIcon {
@@ -29,7 +29,7 @@
     font-family: "Cookie", cursive;
     font-size: 40px;
   }
-}
+} */
 
 .mainPage {
   display: flex;
@@ -51,58 +51,6 @@
       .feedImg {
         width: 400px;
         height: 400px;
-      }
-
-      // .replyHeart : 댓글 생성 시, 사용 가능한 클래스
-      .replyHeart {
-        width: 20px;
-        height: 20px;
-        background-color: red;
-      }
-
-      .replyBox {
-        position: relative;
-        @extend %flexCenter;
-        width: 400px;
-        background-color: rosybrown;
-
-        .replyText {
-          position: relative;
-          display: flex;
-          width: 380px;
-          height: 30px;
-        }
-
-        .activationReplyBtn {
-          display: flex;
-          position: absolute;
-          right: 20px;
-          background-color: unset;
-          border: 0;
-          color: blue;
-          font-weight: bold;
-          opacity: 1;
-          &:hover {
-            cursor: pointer;
-          }
-          &:focus {
-            outline: none;
-          }
-        }
-
-        .disabledReplyBtn {
-          display: flex;
-          position: absolute;
-          right: 20px;
-          background-color: unset;
-          border: 0;
-          color: blue;
-          font-weight: bold;
-          opacity: 0.3;
-          &:focus {
-            outline: none;
-          }
-        }
       }
     }
   }

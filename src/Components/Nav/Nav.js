@@ -21,15 +21,15 @@ class Nav extends React.Component {
               <i className="fas fa-home fa"></i>
             </a>
             <a className="nav_link" href="mainpage.html">
-              <i class="far fa-paper-plane"></i>
+              <i className="far fa-paper-plane"></i>
             </a>
             <a className="nav_link" href="mainpage.html">
-              <i class="far fa-compass fa"></i>
+              <i className="far fa-compass fa"></i>
             </a>
             <a className="nav_link" href="mainpage.html">
-              <i class="far fa-heart fa"></i>
+              <i className="far fa-heart fa"></i>
             </a>
-            <a class="nav_link" href="mainpage.html">
+            <a className="nav_link" href="mainpage.html">
               <img
                 className="nav_image"
                 src="https://pbs.twimg.com/profile_images/883011232160141312/DLZ74EMv_400x400.jpg"

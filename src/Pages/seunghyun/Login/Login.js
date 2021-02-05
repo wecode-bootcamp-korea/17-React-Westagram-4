@@ -1,53 +1,67 @@
 import React, { Component } from "react";
-import "./Login.scss";
+import { withRouter } from "react-router-dom";
 import AppleImg from "../../../images/seunghyun/Appstore.png";
 import GoogleImg from "../../../images/seunghyun/GooglePlay.png";
 import facebookImg from "../../../images/seunghyun/facebook.png";
-import { withRouter } from "react-router-dom";
+import "./Login.scss";
 
 class LoginSH extends Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
+      idValue: "",
+      pwValue: "",
     };
   }
 
-  handleIdInput = (idEvent) => {
+  changeHandleIdInput = (idEvent) => {
     console.log(idEvent.target.value);
     this.setState({
-      id: idEvent.target.value,
+      idValue: idEvent.target.value,
     });
   };
 
-  handlePwInput = (pwEvent) => {
+  changeHandlePwInput = (pwEvent) => {
     console.log(pwEvent.target.value);
     this.setState({
-      pw: pwEvent.target.value,
+      pwValue: pwEvent.target.value,
     });
   };
 
-  handleClick = () => {
-    if (
-      this.state.pw.length > 5 &&
-      this.state.id.includes("@") &&
-      this.state.id.length > 5
-    ) {
+  handleLoginBtnClick = () => {
+    const { idValue, pwValue } = this.state;
+    if (pwValue.length > 5 && idValue.includes("@") && idValue.length > 5) {
+      /* 성준님 : "http://10.58.1.122:8000/account/login" */
+      /* 현수님 : "http://10.58.2.243:8000/user/login" */
+      fetch("http://10.58.1.122:8000/account/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: idValue,
+          password: pwValue,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log("======================================");
+          console.log("백엔드에서 오는 응답 메시지: ", result);
+          /* 로그인 : localStorage.setItem("token", result.access_token) */
+          /* 회원가입 : result.message */
+          localStorage.setItem("token", result.token);
+        });
       this.props.history.push("/main-sh");
     } else {
       alert("ID/Pw를 입력해 주세요!");
     }
   };
 
-  pressEnter = (e) => {
+  loginEnterKeyEvent = (e) => {
     if (e.key === "Enter") {
-      this.handleClick();
+      this.handleLoginBtnClick();
     }
   };
 
   render() {
-    const { id, pw } = this.state;
+    const { idValue, pwValue } = this.state;
 
     return (
       <>
@@ -56,26 +70,26 @@ class LoginSH extends Component {
           <div className="inputBox">
             <input
               className="loginId"
-              onChange={this.handleIdInput}
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onKeyPress={this.pressEnter}
+              onChange={this.changeHandleIdInput}
+              onKeyPress={this.loginEnterKeyEvent}
             ></input>
             <input
               className="loginPw"
-              onChange={this.handlePwInput}
               type="password"
               placeholder="비밀번호"
-              onKeyPress={this.pressEnter}
+              onChange={this.changeHandlePwInput}
+              onKeyPress={this.loginEnterKeyEvent}
             ></input>
           </div>
           <button
             className={
-              pw.length > 5 && id.includes("@") && id.length > 5
+              pwValue.length > 5 && idValue.includes("@") && idValue.length > 5
                 ? "activationBtn"
                 : "disabledBtn"
             }
-            onClick={this.handleClick}
+            onClick={this.handleLoginBtnClick}
           >
             로그인
           </button>

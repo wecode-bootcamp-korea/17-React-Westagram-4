@@ -1,71 +1,97 @@
 import React, { Component } from "react";
-import "../Main.scss";
+import CommentList from "./CommentList/CommentList";
+import "../Comment/Comment.scss";
 
 class Comment extends Component {
   constructor() {
     super();
     this.state = {
-      content: "",
-      posting: [],
+      commentList: [],
+      commentValue: "",
     };
   }
 
-  content = (e) => {
+  componentDidMount() {
+    this.getCommentData();
+  }
+
+  getCommentData = () => {
+    fetch("/data/commentData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  };
+
+  changeCommentValue = (e) => {
     this.setState({
-      content: e.target.value,
+      commentValue: e.target.value,
     });
   };
 
-  posting = (add) => {
+  addCommentList = () => {
+    const { commentList, commentValue } = this.state;
+
+    const newCommentData = [
+      ...commentList,
+      {
+        id: commentList.length + 1,
+        userName: this.props.userId,
+        content: commentValue,
+        isLiked: false,
+      },
+    ];
     this.setState({
-      content: "",
-      posting: [
-        ...this.state.posting,
-        { id: this.props.userId, text: this.state.content },
-      ],
+      commentList: newCommentData,
+      commentValue: "",
     });
+    console.log("commentValue >>>>", commentList);
   };
 
-  pressEnter = (e) => {
-    if (e.key === "Enter") {
-      this.posting();
+  addCommentBtn = (e) => {
+    if (e.key === "Enter" && this.state.commentValue) {
+      this.addCommentList();
     }
   };
 
   render() {
+    const { commentList, commentValue } = this.state;
     return (
-      <>
+      <div className="comment">
         <ul className="replyUl">
-          {this.state.posting.map((add, idx) => {
+          {commentList.map((comment) => {
             return (
-              <li key={idx}>
-                {add.id} {add.text}
-              </li>
+              <CommentList
+                key={comment.id}
+                name={comment.userName}
+                newComment={comment.content}
+                // clickEvent={this.changeColor}
+              />
             );
           })}
         </ul>
         <div className="replyBox">
           <input
-            onChange={this.content}
             type="text"
-            value={this.state.content}
-            onKeyPress={this.pressEnter}
-            className="replyText"
+            value={commentValue}
             placeholder="댓글달기..."
+            onChange={this.changeCommentValue}
+            onKeyPress={this.addCommentBtn}
+            className="replyText"
           />
           <button
-            onClick={this.posting}
-            onKeyPress={this.posting}
-            disabled={!this.state.content}
             type="submit"
-            className={
-              this.state.content ? "activationReplyBtn" : "disabledReplyBtn"
-            }
+            disabled={!commentValue}
+            onClick={this.addCommentList}
+            onKeyPress={this.addCommentList}
+            className={commentValue ? "activationReplyBtn" : "disabledReplyBtn"}
           >
             게시
           </button>
         </div>
-      </>
+      </div>
     );
   }
 }

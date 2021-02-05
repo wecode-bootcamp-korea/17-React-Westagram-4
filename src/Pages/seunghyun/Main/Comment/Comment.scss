@@ -1,0 +1,52 @@
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment {
+  .replyBox {
+    position: relative;
+    @extend %flexCenter;
+    width: 400px;
+    background-color: rosybrown;
+
+    .replyText {
+      position: relative;
+      display: flex;
+      width: 380px;
+      height: 30px;
+    }
+
+    .activationReplyBtn {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      background-color: unset;
+      border: 0;
+      color: blue;
+      font-weight: bold;
+      opacity: 1;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .disabledReplyBtn {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      background-color: unset;
+      border: 0;
+      color: blue;
+      font-weight: bold;
+      opacity: 0.3;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
