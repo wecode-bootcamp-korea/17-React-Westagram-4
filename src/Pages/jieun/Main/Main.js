@@ -44,7 +44,7 @@ class Main extends React.Component {
     <div className='userIds'>
     <img alt="jennierubyjane님의 프로필 사진" className="storiesName"  src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/71533411_449636125903525_7464596574253875200_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=HPpFjLBg2tkAX9J7BmS&amp;tp=1&amp;oh=a8f7b392664f54359bdec2fbaba61adf&amp;oe=603BEAAB" />
       <img alt="ineed_water님의 프로필 사진" className="storiesName"  src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/118745704_1164499573924376_7904986463005430754_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=h1nvgeIE4i8AX_Jov8T&amp;tp=1&amp;oh=d6a3903f57841a09459bdf2a0afc7997&amp;oe=603BCFAE" />
-      <img alt="roses_are_rosie님의 프로필 사진" className="storiesName" src="https:/git/scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/120911233_113942167015019_7757793538086741578_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=lYOylV80sVcAX8YSh4B&amp;tp=1&amp;oh=d5f689b40df9c7e4ff240b89bb56b130&amp;oe=603CB9B9" />
+      <img alt="roses_are_rosie님의 프로필 사진" className="storiesName" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/120911233_113942167015019_7757793538086741578_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=lYOylV80sVcAX8YSh4B&amp;tp=1&amp;oh=d5f689b40df9c7e4ff240b89bb56b130&amp;oe=603CB9B9" />
       <img alt="lilyjcollins님의 프로필 사진" className="storiesName" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/11296893_478580908977658_2053429590_a.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=1RCP-8WUbRcAX-FVyjJ&amp;oh=309394196593d1cdeb354a8ad52eab6a&amp;oe=603CD4E4" />
       <img alt="kendalljenner님의 프로필 사진" className="storiesName"  src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/135811429_139036817943437_5718038198453340319_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=-sTP6V5bFh8AX9LovZa&amp;tp=1&amp;oh=2e1dde69737a6db3be63707a5d625849&amp;oe=603CFD7D" />
       <img alt="violetta님의 프로필 사진" className="storiesName"  src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/21690159_170043630238587_5602868108457934848_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=kjZMa_pTsisAX9mMGy3&amp;tp=1&amp;oh=137affa8ff2034e64d90b7700879a836&amp;oe=603BFB42" />
@@ -65,13 +65,13 @@ class Main extends React.Component {
               <span className='userId'> jenna8447</span>
                여행 가고 싶다아아
               </p>
-              <div>
-          {this.state.commentList.map(comment => {
-            return (
-              <AddComment comment = {comment} />
-            )
-          })}
-        </div>
+               <div>
+                 {this.state.commentList.map(comment => {
+                  return (
+                <AddComment comment = {comment} />
+                )
+                })}
+               </div>
               </p>
             </div>
         <div className='commentContainer'>            
