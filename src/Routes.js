@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
-//import LoginJE from "./Pages/jieun/Login/Login";
-//import MainJE from "./Pages/jieun/Main/Main";
+import LoginJE from "./Pages/jieun/Login/Login";
+import MainJE from "./Pages/jieun/Main/Main";
 //import LoginKT from "./Pages/kyungto/Login/Login";
 //import MainKT from "./Pages/kyungto/Main/Main";
 //import LoginMK from "./Pages/mikyung/Login/Login";
@@ -16,10 +16,10 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Nav} />
-          {/*       
+               
           <Route exact path="/login-je" component={LoginJE} />
           <Route exact path="/main-je" component={MainJE} />
-
+          {/* 
           <Route exact path="/login-kt" component={LoginKT} />
           <Route exact path="/main-kt" component={MainKT} />
 

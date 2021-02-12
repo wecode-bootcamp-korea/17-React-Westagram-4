@@ -1,0 +1,132 @@
+.nav {
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+
+  .navContainer {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 970px;
+    height: 54px;
+    margin: auto;
+
+    .logoContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+    }
+    .searchBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .search {
+        width: 210px;
+        height: 25px;
+        background-color: #fafafa;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        margin: 5px 15px;
+      }
+
+      .searchPlaceholder {
+        position: absolute;
+        color: #8e8e8e;
+
+        .searchIcon {
+          width: 10px;
+          height: 10px;
+          margin: 0 5px;
+        }
+      }
+    }
+    .navIcons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .home,
+      .send,
+      .compass,
+      .heart,
+      .user {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+.stories {
+  width: 600px;
+  height: 118px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding: 16px 0;
+
+  .userStory {
+    display: flex;
+    justify-content: space-around;
+
+    .storiesName {
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+    }
+    .userInfo {
+      font-size: 12px;
+      max-width: 74px;
+
+      .userId {
+        font-weight: lighter;
+      }
+    }
+  }
+}
+header {
+  width: 600px;
+  height: 60px;
+  margin: auto;
+  border: 1px solid #dbdbdb;
+
+  .user {
+    margin-right: 10px;
+  }
+}
+article {
+  width: 600px;
+  height: 840px;
+  margin: auto;
+  padding: 10px 0;
+  border: 1px solid #dbdbdb;
+
+  .feedImage {
+    width: 600px;
+    height: 600px;
+  }
+
+  .feedIcons {
+    width: 600px;
+    height: 40px;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+
+    .heart,
+    .chat,
+    .send {
+      margin: 0 5px;
+    }
+  }
+}
+.userId {
+  font-weight: bolder;
+}
+.otherUserName {
+  font-weight: bolder;
+}
