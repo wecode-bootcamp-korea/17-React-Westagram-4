@@ -27,10 +27,9 @@ class Routes extends React.Component {
           <Route exact path="/main-mk" component={MainMK} />
 
           <Route exact path="/login-sh" component={LoginSH} />
-          <Route exact path="/main-sh" component={MainSH} />
-          */}
-
-          {/* <Route exact path="/" component={Login} /> */}
+          <Route exact path="/main-sh" component={MainSH} />  }
+          
+           { <Route exact path="/" component={Login} /> } */}
         </Switch>
       </Router>
     );
